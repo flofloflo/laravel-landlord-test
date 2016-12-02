@@ -1,2 +1,8 @@
 # laravel-landlord-test
-Test scenario for possible user model bug
+Laravel+Landlord test app with User model and different scopes.
+
+Install steps:
+* clone
+* composer update
+* php artisan migrate --seed
+* open / in webbrowser
