@@ -6,3 +6,4 @@ Install steps:
 * composer update
 * php artisan migrate --seed
 * open / in webbrowser
+* login with *mail1@abc.de* or *mail2@abc.de* and password *secret*
