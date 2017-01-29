@@ -66,12 +66,23 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-           
-
             <div class="content">
+                <a href="/home">go to protected area</a>
+                @if (Auth::guest())
+                    <li><a href="{{ url('/login') }}">Login</a></li>
+                @else
+                    <a href="{{ url('/logout') }}"
+                    onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                        Logout
+                    </a>
+                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                @endif
                 <h2>Select scope:</h2>
                 <div class="links">
-                    <a href="/">without scope</a>
+                    <a href="/">without scope/user scoped</a>
                     <a href="/?tenant=1">Tenant 1</a>
                     <a href="/?tenant=2">Tenant 2</a>
                 </div>

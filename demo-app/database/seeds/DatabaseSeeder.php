@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         for($i=1;$i<7;$i++)
         {
             //even users are assigend to tenant 1
-            User::create(["name"=>"User ".$i,"tenant_id"=>$i%2+1]);
+            User::create(["name"=>"User ".$i,"email"=>"mail".$i."@abc.de","password"=>bcrypt("secret"),"tenant_id"=>$i%2+1]);
         }
     }
 }
